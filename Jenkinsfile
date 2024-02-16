@@ -4,6 +4,10 @@ pipeline{
     DOCKERHUB_CREDENTIALS=credentials('dockerhub')
   }
   stages{
+    stage('clean up'){
+      sh 'docker rmi nanceche/mytriotaskflask'
+      sh 'docker rm nanceche/mytriotaskflask'
+    }
     stage('init'){
       steps{
         sh 'docker rm -f $(docker ps -aq) || true'
