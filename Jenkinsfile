@@ -8,6 +8,7 @@ pipeline{
       steps{
         sh 'docker rm -f $(docker ps -aq) || true'
       }
+    }
     stage('build'){
       steps {
         sh 'chmod +x deploy.sh'
@@ -27,4 +28,3 @@ pipeline{
       
     }
   }
-}
