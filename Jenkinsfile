@@ -25,7 +25,7 @@ pipeline{
       steps{
         sh "echo \$DOCKERHUB_CREDENTIALS_PSW | docker login -u \$DOCKERHUB_CREDENTIALS_USR --password-stdin"
         sh "docker tag trio-task-mysql:5.7 nanceche/mytriotasksql1:latest"
-        sh "docker tag trio-task-flask-app nanceche/mytriotasksflask:latest"
+        sh "docker tag trio-task-flask-app nanceche/mytriotaskflask:latest"
         sh "docker push nanceche/mytriotasksql1:latest"
         sh "docker push nanceche/mytriotaskflask:latest"
         
