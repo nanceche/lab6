@@ -6,8 +6,8 @@ pipeline{
   stages{
     stage('clean up'){
       steps{
-      sh 'docker rmi nanceche/mytriotaskflask'
-      sh 'docker rm nanceche/mytriotaskflask'
+      sh 'docker rmi nanceche/mytriotaskflask || true'
+      sh 'docker rm nanceche/mytriotaskflask || true'
       }
     }
     stage('init'){
